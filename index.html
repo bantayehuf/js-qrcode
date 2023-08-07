@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS QRCode reader</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./html5_qrcode.js"></script>
+</head>
+
+
+<!-- Documentation https://scanapp.org/html5-qrcode-docs/docs/intro -->
+<!-- By Bantayehu Fikadu <bantayehuf@gmail.com> -->
+
+<body>
+
+    <main>
+        <div class="reader" id="reader"></div>
+
+        <div class="result">
+            <div id="scanDate"></div>
+            <div id="scanText"></div>
+        </div>
+    </main>
+</body>
+
+<script>
+    let scanDate = document.querySelector('#scanDate');
+    let scanText = document.querySelector('#scanText');
+
+    function onScanSuccess(decodedText, decodedResult) {
+        console.log(decodedResult);
+        // console.log(decodedText);
+
+        var d = new Date();
+
+        scanDate.innerHTML = `Scanned at: ${d.getHours()}:${d.getMinutes()} ${d.getSeconds()}`;
+        scanText.innerHTML = decodedText;
+    }
+
+    function onScanFailure(error) {
+        // handle scan failure, usually better to ignore and keep scanning.
+        // for example:
+        // console.warn(`Code scan error = ${error}`);
+    }
+
+    let html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader",
+        {
+            fps: 10,
+            qrbox: { width: 250, height: 250 },
+            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA],
+        }, false);
+
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+</script>
+
+</html>

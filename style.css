@@ -1,0 +1,28 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reader {
+    width: 350px;
+}
+
+.result {
+    margin-top: 1.5rem;
+    display: flex;
+}
+
+.result #scanDate {
+    margin-right: 1.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+.result #scanText {
+    margin-right: 1.5rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+}

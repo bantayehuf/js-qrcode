@@ -12,6 +12,10 @@ main {
 .result {
     margin-top: 1.5rem;
     display: flex;
+    max-width: 100vw;
+    flex-direction: column;
+    gap: 5;
+    padding: 10px;
 }
 
 .result #scanDate {
@@ -25,4 +29,5 @@ main {
     margin-right: 1.5rem;
     font-weight: normal;
     font-size: 1.2rem;
+    margin-top: 10px;
 }

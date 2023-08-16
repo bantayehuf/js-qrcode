@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS QRCode Creator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<!-- By Bantayehu Fikadu <bantayehuf@gmail.com> -->
+<!-- Documentation https://github.com/davidshimjs/qrcodejs for qrcodejs -->
+<!-- Documentation https://html2canvas.hertzen.com/ for image creator -->
+
+
+<body>
+    <main>
+        <input id="qrText" type="text" value="https://qr-generator.com" style="width:80%" />
+        <br />
+        <button onclick="generateQRCode()">Generate</button>
+        <br />
+        <button onclick="createImage('qrcode')">Download</button>
+
+        <div style="padding: 20px;" id="qrcode"></div>
+    </main>
+
+    <script src="./js/qrcode.min.js"></script>
+    <script src="./js/html2canvas.min.js"></script>
+    <script src="./js/qr-generator.js"></script>
+</body>
+
+</html>

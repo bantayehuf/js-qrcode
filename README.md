@@ -18,7 +18,7 @@ The dependencies are already included, so you don't need to install them.
 # How to use
 Clone the repository 
 ```sh
-git clone https://github.com/bantayehuf/js-qrcode-scanner.git
+git clone https://github.com/bantayehuf/js-qrcode.git
 ```
 - Use create.html to generate QR code
 - Use scan.html to scan QR code
